@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lockscreen = (prompt("pin,pattern,fingerprint"))
+          
+
+        switch (lockscreen) {
+            case 'pin':
+                document.writeln("enter pin number")
+                
+                break;
+                 case 'pattern':
+                document.writeln("enter pin pattern")
+                break;
+                 case 'fingerprint':
+                document.writeln("enter fingerprint")
+                break;
+        
+            default:
+                document.writeln("your phone locked")
+                break;
+        }
+    </script>
+</body>
+</html>

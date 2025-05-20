@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let season = prompt("enter season(winter,monsoun,summer)")
+
+    switch (season) {
+        case "january":
+        case "fabruary":
+        case "march":
+        case "april": 
+         document.writeln("summer")  
+            break;
+        case "may":
+        case "june":
+        case "july":
+        case "augast":
+            document.writeln("winter")
+            break;
+        case "saptembar":
+        case "octobar":
+        case "navember":
+        case "december":
+            document.writeln("monsoun")
+
+    
+        default:
+            document.writeln("this is not a month")
+            break;
+    }
+   </script> 
+</body>
+</html>

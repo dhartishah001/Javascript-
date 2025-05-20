@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hindi=prompt("enter your marks in hindi");
+        let gujarti=prompt("enter your marks in gujarti");
+        let english=prompt("enter your marks in english");
+        let computer=prompt("enter your marks in computer");
+
+        
+        let mark=(parseFloat(hindi)+parseFloat(gujarti)+parseFloat(english)+parseFloat(computer));
+        grade= (mark/400)*100;
+        switch (true) {
+  case (grade >= 90):
+    document.writeln ( "A+");
+    break;
+  case (grade >= 80):
+    document.writeln  ("A");
+    break;  
+  case (grade >= 70):
+    document.writeln ("B");
+    break;
+  case (grade >= 60):
+    document.writeln ("C");
+    break;
+  case (grade >= 50):
+    document.writeln  ("D");
+    break;
+  default:
+    document.writeln  ("F (Fail)");
+}
+    </script>
+</body>
+</html>
