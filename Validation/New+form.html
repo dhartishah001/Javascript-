@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#" onsubmit="return validation()">
+      <table>
+        <tr>
+          <td><label for="UserName">UserName</label></td>
+          <td><input type="text" id="username" />  <span id="usernameerror"></span></td>
+         
+        </tr>
+        <tr>
+          <td><label for="password">password</label></td>
+          <td><input type="password" id="password" /> <span id="passworderror"></span></td>
+          
+        </tr>
+        <tr>
+          <td><label for="Email">Email</label></td>
+          <td><input type="email" id="email" /> <span id="emailerror"></span></td>
+          
+        </tr>
+        <tr>
+          <td><label for="number">Number</label></td>
+          <td><input type="tel" id="number" /> <span id="numbererror"></span></td>
+          
+        </tr>
+        <tr>
+          <td><input type="submit" value="Submit" id="submit" /></td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      let username = document.getElementById("username");
+      let usernameerror = document.getElementById("usernameerror");
+    //   console.log(usernameerror);
+      
+      let password = document.getElementById("password");
+      let passwordError = document.getElementById("passworderror");
+
+      let email = document.getElementById("email");
+      let emailError = document.getElementById("emailerror");
+
+      let number = document.getElementById("number");
+      let numberError = document.getElementById("numbererror");
+      //   console.table(username, password, email, number);
+      let count = 1;
+      function validation() {
+        console.log("ME");
+
+        if (username.value == "") {
+          console.log("Error");
+          usernameerror.innerHTML = "Enter your Name";
+          count = 0;
+        } else {
+          usernameerror.innerHTML = "";
+          count = 1;
+        }
+        
+        if (password.value == "") {
+           console.log("Error");
+           passwordError.innerHTML = "Enter your Name";
+           count = 0;
+         } else {
+               passwordError.innerHTML = "";
+           count = 1;
+         }
+         
+         if (email.value == "") {
+            console.log("Error");
+            emailError.innerHTML = "Enter your Name";
+            count = 0;
+          } else {
+            emailError.innerHTML = "";
+            count = 1;
+          }
+
+          if (number.value == "") {
+            console.log("Error");
+            numberError.innerHTML = "Enter your Name";
+              
+            count = 0;
+          } else {
+            numberError.innerHTML = "";
+            count = 1;
+          }
+
+      }
+        
+
+    </script>
+  </body>
+</html>

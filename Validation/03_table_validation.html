@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <label for="username">username</label>
+          <input
+            type="name"
+            name="name"
+            placeholder="name"
+            class="parent"
+            id="username"
+          />
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <label for="email">email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            class="parent"
+            id="email"
+          />
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <label for="phone">number:</label>
+          <input
+            type="number"
+            name="number"
+            placeholder="number"
+            class="parent"
+            id="phone"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="submit" /></td>
+      </tr>
+    </table>
+
+    <script>
+      document
+        .getElementByIdclassname(parent)
+        .addeventlistener("click", function (e) {
+          let username = document.getElementById("username").value;
+          let email = document.getElementById("email").value;
+          let number = document.getElementById("number").value;
+        });
+
+      // let apend = document.createElement("span")
+      // console.log(apend);
+      // parent.apendchild
+    </script>
+  </body>
+</html>
