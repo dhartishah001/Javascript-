@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onclick="data()">
+      username:<input type="text" id="one" /><br />
+      name:<input type="text" id="two" /><br />
+      password:<input type="password" id="thrre" /><br />
+      enternumber:<input type="number" id="four" /><br />
+      <input type="submit" id="five " />
+    </form>
+
+    <script>
+      let a = document.getElementById("one").value;
+      let b = document.getElementById("two").value;
+      let c = document.getElementById("three").value;
+      let d = document.getElementById("four").value;
+      let e = document.getElementById("five").value;
+
+
+      if (a =="" || b =="" || c =="" || d == "")
+      {
+        alert("all field are mendatory");
+      }
+    </script>
+  </body>
+</html>
