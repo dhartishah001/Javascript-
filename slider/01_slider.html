@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Volume Slider</h2>
+    <input type="range" id="volumeSlider" min="0" max="100" value="50" />
+    <p>Selected Volume: <span id="volumeValue">50</span></p>
+
+    <script>
+      let slider = document.getElementById("volumeSlider");
+      let output = document.getElementById("volumeValue");
+
+      // Jab user slider ko move kare, value update ho
+      slider.addEventListener("input", function () {
+        output.textContent = slider.value;
+      });
+    </script>
+  </body>
+</html>

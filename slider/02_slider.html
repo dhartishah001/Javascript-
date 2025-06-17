@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="slider-container">
+   <input type="range" id="myslider" min="0" max="100" value="50">
+
+    <span id="sliderValue">50</span>
+</div>
+    <script>
+         let  slider = document.getElementById('myslider');
+         let sliderValuedisplay = document.getElementById('slidervalue');
+
+
+         slider.addEventListener ('input',() => {
+            sliderValuedisplay.textContent=slider.value ;
+         });
+    </script>
+    
+
+
+
+        
+</html>

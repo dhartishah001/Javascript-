@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div align="center">
+        <h1>
+            slider with the help of timeout
+        </h1>
+        <div  class="slider">
+            <h2> hello image 1</h2>
+            <img src="../assets/img/logo tangle.png" alt="slider1" width="50%">slider1
+        </div>
+        <div class="slider">
+            <h2> hello image 2</h2>
+            <img src="../assets/img/logo tangle.png" alt="slider2" width="50%">slider2
+        </div>
+        <div  class="slider">
+            <h2> hello image 3</h2>
+            <img src="../assets/img/logo tangle.png" alt="slider3" width="50%">slider3
+        </div>
+        
+    </div>
+     <script>
+        let count = 0;
+          function slideshow() {
+            let a;
+            let slide = document.getElementsByClassName("slider");
+            
+            // console.log(slide, "slide")
+            
+            for (a = 0; a < slide.length; a++) {
+                // console.log(a, "a")
+                slide[a].style.display = "none";
+            
+
+            }
+
+
+            // console.log("count", count)
+            count++;
+
+            if (count > slide.length) {
+                // console.log("count inside", count)
+
+                count = 1
+            }
+            
+            slide[count - 1].style.display = "block";
+           
+            
+            setTimeout(slideshow, 2000);
+        }
+        slideshow();
+</script>
+</body>
+</html>
