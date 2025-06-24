@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pure JS Counter</title>
+  <style>
+    .count {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h3 class="count" data-from="0" data-to="250" data-speed="1500">0</h3>
+  <h3 class="count" data-from="100" data-to="500" data-speed="2000">100</h3>
+
+  <script>
+    function animateCount(element) {
+      const from = +element.getAttribute('data-from') || 0;
+      const to = +element.getAttribute('data-to') || 0;
+      const duration = +element.getAttribute('data-speed') || 2000;
+
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.floor(from + (to - from) * progress);
+        element.textContent = value;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          element.textContent = to;
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const counters = document.querySelectorAll('.count');
+      counters.forEach(animateCount);
+    });
+  </script>
+
+</body>
+</html>
