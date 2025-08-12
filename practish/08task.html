@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Roll Number Lookup (JS only)</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .search { margin-bottom: 12px; }
+    input { padding: 8px; font-size: 16px; width: 220px; }
+    .card { display: inline-flex; gap:12px; align-items:center; padding:12px; border:1px solid #ddd; border-radius:8px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);}
+    .card img { width:80px; height:80px; object-fit:cover; border-radius:6px; }
+    .meta { line-height:1.3; }
+    .notfound { color:#b00; }
+    .hint { color:#666; font-size:14px; margin-top:8px; }
+  </style>
+</head>
+<body>
+
+  <h3>Roll Number se Student dhoondo</h3>
+
+  <div class="search">
+    <input id="rollInput" placeholder="Roll number type karo (e.g. 12)" />
+  </div>
+
+  <div id="result"></div>
+  <div class="hint">Tip: example roll numbers = 12, 34, 56, 78</div>
+
+<script>
+  // Yahan 4 students ka data hai (roll, name, image).
+  // Aap chaho to 100 students ka array yahan add kar sakte ho.
+  const students = [
+    { roll: '12', name: 'Aman Kumar', img: 'https://via.placeholder.com/150?text=Aman' },
+    { roll: '34', name: 'Neha Sharma', img: 'https://via.placeholder.com/150?text=Neha' },
+    { roll: '56', name: 'Rohit Patel', img: 'https://via.placeholder.com/150?text=Rohit' },
+    { roll: '78', name: 'Sana Ali', img: 'https://via.placeholder.com/150?text=Sana' }
+  ];
+
+  const input = document.getElementById('rollInput');
+  const result = document.getElementById('result');
+
+  // oninput se turant check karega jab user type kare
+  input.addEventListener('input', () => {
+    const val = input.value.trim();
+    // agar khali, to result hata do
+    if (val === '') {
+      result.innerHTML = '';
+      return;
+    }
+
+    // search: agar roll match ho to show karo
+    const s = students.find(st => st.roll === val);
+
+    if (s) {
+      result.innerHTML = `
+        <div class="card">
+          <img src="${s.img}" alt="${escapeHtml(s.name)}">
+          <div class="meta">
+            <div><strong>Name:</strong> ${escapeHtml(s.name)}</div>
+            <div><strong>Roll:</strong> ${escapeHtml(s.roll)}</div>
+          </div>
+        </div>
+      `;
+    } else {
+      result.innerHTML = `<div class="notfound">Koi student us roll number se nahi mila.</div>`;
+    }
+  });
+
+  // simple escape to avoid XSS if you later feed dynamic data
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+</script>
+
+</body>
+</html>

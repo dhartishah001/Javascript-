@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Search</title>
+</head>
+<body>
+
+<h3>Roll Number Search</h3>
+<input id="roll" placeholder="Enter roll number">
+<button onclick="findStudent()">Search</button>
+
+<div id="output"></div>
+
+<script>
+let students = [
+  {roll: 12, name: "Aman", img: "https://via.placeholder.com/100?text=Aman"},
+  {roll: 34, name: "Neha", img: "https://via.placeholder.com/100?text=Neha"},
+  {roll: 56, name: "Rohit", img: "https://via.placeholder.com/100?text=Rohit"},
+  {roll: 78, name: "Sana", img: "https://via.placeholder.com/100?text=Sana"}
+];
+
+function findStudent(){
+  let rollNum = document.getElementById("roll").value;
+  let s = students.find(x => x.roll == rollNum);
+  
+  if(s){
+    document.getElementById("output").innerHTML = 
+      `<h4>Name: ${s.name}</h4>
+       <p>Roll: ${s.roll}</p>
+       <img src="${s.img}">`;
+  } else {
+    document.getElementById("output").innerHTML = "Student not found!";
+  }
+}
+</script>
+
+</body>
+</html>
