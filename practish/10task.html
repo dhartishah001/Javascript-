@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Student Search</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        padding: 20px;
+        text-align: center;
+    }
+    h3 {
+        color: #333;
+    }
+    input {
+        padding: 10px;
+        font-size: 16px;
+        width: 250px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        outline: none;
+        margin-bottom: 20px;
+    }
+    .card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        display: inline-block;
+        text-align: left;
+        max-width: 300px;
+        margin-top: 10px;
+    }
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .card h4 {
+        margin: 5px 0;
+        font-size: 20px;
+        color: #222;
+    }
+    .card p {
+        margin: 4px 0;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+
+<h3>Roll Number Search</h3>
+<input id="roll" placeholder="Enter roll number">
+
+<div id="output"></div>
+
+<script>
+let students = [
+  {roll: 12, name: "Aman Kumar", img: "https://via.placeholder.com/300x200?text=Aman"},
+  {roll: 34, name: "Neha Sharma", img: "https://via.placeholder.com/300x200?text=Neha"},
+  {roll: 56, name: "Rohit Patel", img: "https://via.placeholder.com/300x200?text=Rohit"},
+  {roll: 78, name: "Sana Ali", img: "https://via.placeholder.com/300x200?text=Sana"}
+];
+
+document.getElementById("roll").addEventListener("input", function(){
+  let rollNum = this.value.trim();
+  let s = students.find(x => x.roll == rollNum);
+  
+  if(s){
+    document.getElementById("output").innerHTML = 
+      `<div class="card">
+         <img src="${s.img}" alt="${s.name}">
+         <h4>${s.name}</h4>
+         <p><strong>Roll:</strong> ${s.roll}</p>
+       </div>`;
+  } else {
+    document.getElementById("output").innerHTML = "this studen is not fund";
+  }
+});
+</script>
+
+</body>
+</html>
