@@ -1,0 +1,157 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data type</title>
+</head>
+<body>
+    <script>
+        let name= "dharti"
+        document.writeln(name);
+        
+
+        let number=(12);
+        document.writeln(number);
+
+
+        
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML & CSS Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 30px auto;
+      background: #f0f0f5;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question h3 {
+      margin-bottom: 8px;
+      color: #222;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .result {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      color: #2b7a0b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML & CSS Quiz</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <h3>1. What does HTML stand for?</h3>
+      <label><input type="radio" name="q1" value="b" /> HyperText Markup Language</label>
+      <label><input type="radio" name="q1" value="a" /> HyperText Markdown Language</label>
+      <label><input type="radio" name="q1" value="c" /> HighText Machine Language</label>
+      <label><input type="radio" name="q1" value="d" /> None of the above</label>
+    </div>
+
+    <div class="question">
+      <h3>2. Which HTML tag is used to create a hyperlink?</h3>
+      <label><input type="radio" name="q2" value="c" /> &lt;a&gt;</label>
+      <label><input type="radio" name="q2" value="a" /> &lt;link&gt;</label>
+      <label><input type="radio" name="q2" value="b" /> &lt;href&gt;</label>
+      <label><input type="radio" name="q2" value="d" /> &lt;hyper&gt;</label>
+    </div>
+
+    <div class="question">
+      <h3>3. Which property is used in CSS to change the text color of an element?</h3>
+      <label><input type="radio" name="q3" value="c" /> color</label>
+      <label><input type="radio" name="q3" value="a" /> font-color</label>
+      <label><input type="radio" name="q3" value="b" /> text-color</label>
+      <label><input type="radio" name="q3" value="d" /> text-style</label>
+    </div>
+
+    <div class="question">
+      <h3>4. How can you make a list that lists the items with bullets?</h3>
+      <label><input type="radio" name="q4" value="b" /> &lt;ul&gt;</label>
+      <label><input type="radio" name="q4" value="a" /> &lt;ol&gt;</label>
+      <label><input type="radio" name="q4" value="c" /> &lt;li&gt;</label>
+      <label><input type="radio" name="q4" value="d" /> &lt;dl&gt;</label>
+    </div>
+
+    <div class="question">
+      <h3>5. Which of the following is the correct syntax for adding CSS to an HTML file?</h3>
+      <label><input type="radio" name="q5" value="b" /> &lt;link rel="stylesheet" href="style.css"&gt;</label>
+      <label><input type="radio" name="q5" value="a" /> &lt;style src="style.css"&gt;</label>
+      <label><input type="radio" name="q5" value="c" /> &lt;css href="style.css"&gt;</label>
+      <label><input type="radio" name="q5" value="d" /> &lt;stylesheet&gt;style.css&lt;/stylesheet&gt;</label>
+    </div>
+
+    <div>
+        <h3>6.</h3>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Submit</button>
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <script>
+    const answers = {
+      q1: 'b',
+      q2: 'c',
+      q3: 'c',
+      q4: 'b',
+      q5: 'b'
+    };
+
+    function checkAnswers() {
+      let score = 0;
+      const total = Object.keys(answers).length;
+      for (const q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+          score++;
+        }
+      }
+      const resultDiv = document.getElementById('result');
+      resultDiv.textContent = `You scored ${score} out of ${total}.`;
+    }
+  </script>
+
+</body>
+</html>
